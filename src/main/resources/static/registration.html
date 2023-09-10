@@ -7,27 +7,21 @@
     <link rel="stylesheet" href="registration/registrationStyle.css">
 </head>
 <body>
-    <form id="form">
-        <div class="title">Регистрация</div>
-    <label id="name">
-            <input type="text" id="username">
-            <span>Имя</span>
-    </label>
-
-    <div>
-    <label id="email">
-        <input type="text" id="user-email">
-        <span>Электронная почта</span>
-    </label>
-    <div class="input-error">Неверный email</div>
+<form id="form">
+    <div class="name">
+        <label>Name:</label>
+        <input type="text" name="name" required>
     </div>
-    
-    <label id="password">
-            <input type="password" id="user-password">
-            <span>Пароль</span>
-    </label>
-    <button class="disable" type="submit">Войти</button>
-    </form>
+    <div class="email">
+        <label>Email:</label>
+        <input type="email" name="email" required>
+    </div>
+    <div class="password">
+        <label>Password:</label>
+        <input type="password" name="password" required>
+    </div>
+    <button type="submit" class="button disable" disabled>Submit</button>
+</form>
+    <script src="registration/registrationAction.js"></script>
 </body>
-<script src="registration/registrationAction.js"></script>
 </html>
