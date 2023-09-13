@@ -4,9 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class RegistrationController {
-	@GetMapping("/demo/registry")
-	public String showRegPage() {
-		return "registration.html";
-	}
+public class MainController {
+
+    @GetMapping("/demo/mainpage")
+    public String showMainPage(){
+        return "mainpage.html";
+    }
 }

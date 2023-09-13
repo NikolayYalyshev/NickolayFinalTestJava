@@ -2,26 +2,23 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация пользователя</title>
+    <title>Моя первая страница</title>
     <link rel="stylesheet" href="registration/registrationStyle.css">
 </head>
 <body>
 <form id="form">
-    <div class="name">
-        <label>Name:</label>
-        <input type="text" name="name" required>
-    </div>
-    <div class="email">
-        <label>Email:</label>
-        <input type="email" name="email" required>
-    </div>
-    <div class="password">
-        <label>Password:</label>
-        <input type="password" name="password" required>
-    </div>
-    <button type="submit" class="button disable" disabled>Submit</button>
+    <h2>Регистрация</h2>
+    <label for="username">Имя пользователя:</label>
+    <input type="text" id="username" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" required>
+
+    <button type="submit" id="registration-button">Зарегистрироваться</button>
 </form>
-    <script src="registration/registrationAction.js"></script>
+<script src="registration/registrationAction.js"></script>
 </body>
 </html>
