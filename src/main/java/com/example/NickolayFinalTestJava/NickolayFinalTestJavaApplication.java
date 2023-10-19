@@ -10,4 +10,6 @@ public class NickolayFinalTestJavaApplication {
 		SpringApplication.run(NickolayFinalTestJavaApplication.class, args);
 	}
 
+	
+	// http://localhost:8080/start- start
 }

@@ -19,7 +19,7 @@ form.addEventListener('submit', async (event) => {
             headers:{'Content-Type' : 'application/json'}
         });
         if(response.ok){
-            window.location.href = '/demo/mainpage';
+            window.location.href = '/authorization';
         } else {
             const error = await response.json();
             const errorMassage = error.massage || 'Произошла ошибка';
