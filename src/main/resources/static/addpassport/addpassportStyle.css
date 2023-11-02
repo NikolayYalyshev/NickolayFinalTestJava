@@ -22,8 +22,7 @@ label{
 }
 
 input[type="text"],
-input[type="email"],
-input[type="password"]{
+input[type="number"]{
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -31,8 +30,6 @@ input[type="password"]{
     border-radius: 5px;
     box-sizing: border-box;
 }
-
-
 
 
 .gradient-button {
@@ -113,4 +110,5 @@ input[type="password"]{
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
-}
+    }
+

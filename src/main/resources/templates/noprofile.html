@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Профиль отсутствует</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mainpage/mainpageStyle.css">
+</head>
+<body>
+
+<div class="header">
+    <div align="left">
+    <input class="gradient-button" type="button" onclick="history.back();" value="Назад"/>
+    </div>
+    <h1 align="right">ВсеДоки.ру</h1>
+    <div >
+        <h1 id="username" name="username" th:text="${name}"></h1>
+        <p>Ваш профиль еще не заполнен! Пришло время заполнить информацию для своего профиля.</p>
+    </div>
+</div>
+
+
+<h1 align="center">Мой профиль</h1>
+
+<p></p>
+<div align="center">
+<button  class="glow-on-hover" onclick="window.location.href = 'addprofile'">Ввести данные для профиля</button>
+</div>
+
+</body>
+</html>

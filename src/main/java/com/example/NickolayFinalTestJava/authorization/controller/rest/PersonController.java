@@ -1,11 +1,12 @@
 package com.example.NickolayFinalTestJava.authorization.controller.rest;
 
 
+import com.example.NickolayFinalTestJava.authorization.entity.Passport;
+import com.example.NickolayFinalTestJava.authorization.entity.Profile;
 import com.example.NickolayFinalTestJava.authorization.model.PersonModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.NickolayFinalTestJava.authorization.entity.Person;
@@ -16,9 +17,9 @@ public class PersonController {
 	@Autowired
 	private PersonService personService;
 	
-	@PostMapping("/person")
-	public ResponseEntity registration(@RequestBody Person person) {
-		try{
+	@PostMapping("/savePerson")
+	public ResponseEntity statusPerson(@RequestBody Person person) {
+		try {
 			personService.registration(person);
 			return new ResponseEntity(HttpStatus.OK);
 		} catch (Exception e) {
@@ -29,8 +30,28 @@ public class PersonController {
 	@PostMapping("/authorizationPerson")
 	public ResponseEntity authorization(@RequestBody PersonModel personModel) {
 		try {
-		personService.validateText(personModel);
-			return new ResponseEntity(HttpStatus.OK);
+			 personService.validPersonModel(personModel);
+			return new ResponseEntity<>( HttpStatus.OK);
+		} catch (Exception e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+	
+	@PostMapping("/saveProfile")
+	public ResponseEntity statusProfile(@RequestBody Profile profile){
+		try {
+			personService.saveProfile(profile);
+			return new ResponseEntity<>( HttpStatus.OK);
+		} catch (Exception e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+	
+	@PostMapping("/savePassport")
+	public ResponseEntity statusPassport(@RequestBody Passport passport){
+		try {
+			personService.savePassport(passport);
+			return new ResponseEntity<>( HttpStatus.OK);
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
@@ -38,7 +59,7 @@ public class PersonController {
 	
 	@GetMapping
 	public ResponseEntity findPersonById(Long id) {
-		try{
+		try {
 			personService.findPersonById(id);
 			return new ResponseEntity(HttpStatus.OK);
 		} catch (Exception e) {

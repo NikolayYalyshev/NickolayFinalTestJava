@@ -13,13 +13,13 @@ form.addEventListener('submit', async (event) => {
     console.log(username, email, password);
 
     try{
-        const response = await fetch('/person',{
+        const response = await fetch('/savePerson',{
             method: 'POST',
             body: JSON.stringify({username,email,password}),
             headers:{'Content-Type' : 'application/json'}
         });
         if(response.ok){
-            window.location.href = '/authorization';
+            window.location.href = '/mainpage';
         } else {
             const error = await response.json();
             const errorMassage = error.massage || 'Произошла ошибка';

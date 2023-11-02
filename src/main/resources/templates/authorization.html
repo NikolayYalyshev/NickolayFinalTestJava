@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="ru" >
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Авторизация Доки.ру</title>
     <link rel="stylesheet" href="authorization/authorizationStyle.css">
 </head>
 <body>
+<input align="right" class="gradient-button" type="button" onclick="document.location='/start'" value="Назад"/>
 <form id="form">
     <h2>Авторизация</h2>
     <label for="username">Имя пользователя:</label>
-    <input type="text" id="username"  required>
+    <input type="text" id="username" name="username" required>
 
     <label for="password">Пароль:</label>
-    <input type="password"  id="password"  required>
+    <input type="password"  id="password" name="password" required>
 
-    <button type="submit" id="registration-button">Войти</button>
+    <button class="glow-on-hover" type="submit" id="registration-button">Войти</button>
 </form>
 <script src="authorization/authorizationAction.js"></script>
 </body>

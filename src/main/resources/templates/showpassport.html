@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой профиль</title>
+    <link rel="stylesheet" href="showpassport/showpassportStyle.css">
+</head>
+<body>
+<div class="header">
+    <h1 align="center"> ВсеДоки.ру</h1>
+</div>
+<div id="navbar">
+    <a class="bu" href="/showprofile">Профиль</a>
+    <a href="/showpassport">Паспорт</a>
+    <a href="/authorization" class="right">Выход</a>
+    <a href="/presentation" th:text="${name}" class="right">User</a>
+</div>
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-xl-6 col-md-12">
+                <h1 align="center">Мой пасспорт</h1>
+                <div class="card user-card-full">
+                    <div th:each="element : ${people}" class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white">
+                                <div class="m-b-25">
+                                    <img src="https://cdn-icons-png.flaticon.com/128/7780/7780141.png?track=ais" class="img-radius" alt="User-Profile-Image">
+                                </div>
+                                <span class="items surname">Фамилия</span>
+                                <span class="items name">Имя</span>
+                                <span class="items lastname">Отчество</span>
+                                <p></p>
+                                <span class="fio surnameP" th:text="${element.profile.surname}">Данные отсутствуют</span>
+                                <span class="fio nameP" th:text="${element.username}">Данные отсутствуют</span>
+                                <span class="fip lastnameP" th:text="${element.profile.lastname}">Данные отсутствуют</span>
+                                <p>Backend Developer/Web Designer</p>
+                                <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                <h3 align="center" class="m-b-20 p-b-5 b-b-default f-w-600">Серия и номер паспорта</h3>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Серия</p>
+                                        <h6 class="text-muted f-w-400" th:text="${element.passport.series}">Данные отсутствуют</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Номер</p>
+                                        <h6 class="text-muted f-w-400" th:text="${element.passport.number}">Данные отсутствуют</h6>
+                                    </div>
+                                </div>
+                                <h3 align="center" class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Ведомство</h3>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Кем выдан</p>
+                                        <h6 class="text-muted f-w-400" th:text="${element.passport.organization}">Данные отсутствуют</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Дата выдачи</p>
+                                        <h6 class="text-muted f-w-400" th:text="${element.passport.dateIssue}">Данные отсутствуют</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Код подразделения</p>
+                                        <h6 class="text-muted f-w-400" th:text="${element.passport.departmentCode}">Данные отсутствуют</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+</body>
+</html>

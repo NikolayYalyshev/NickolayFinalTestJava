@@ -1,10 +1,14 @@
 package com.example.NickolayFinalTestJava.authorization.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 
 @Entity
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,46 +18,11 @@ public class Person {
 	private String email;
 	private String password;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "profile_id", nullable = true)
+	private Profile profile;
 	
-	public Person() {
-	}
-	
-	public Person(Long id, String username, String email, String password) {
-		this.id = id;
-		this.username = username;
-		this.email = email;
-		this.password = password;
-	}
-	
-	public Long getId() {
-		return id;
-	}
-	
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	public String getUsername() {
-		return username;
-	}
-	
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	
-	public String getEmail() {
-		return email;
-	}
-	
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	public String getPassword() {
-		return password;
-	}
-	
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "passport_id", nullable = true)
+	private Passport passport;
 }

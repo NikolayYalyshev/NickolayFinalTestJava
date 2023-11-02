@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой профиль</title>
+    <link rel="stylesheet" href="addprofile/profileStyle.css">
+</head>
+<body>
+<div align="left">
+    <input class="gradient-button" type="button" onclick="history.back();" value="Назад"/>
+</div>
+<form id="forma">
+    <h2>Пришло время познакомиться поближе. Давайте заполним данные своего профиля</h2>
+    <label for="surname">Фамилия:</label>
+    <input type="text" id="surname" name="surname" required>
+
+    <label for="lastname">Отчество:</label>
+    <input type="text"  id="lastname" name="lastname" required>
+
+    <label for="birthday">Дата рождения</label>
+    <input type="text" id="birthday" name="birthday" value="01.01.2001" required>
+
+    <label for="phoneNumber">Номер сотового телефона:</label>
+    <input type="tel"  id="phoneNumber" name="phoneNumber" placeholder="+7 (900) 123-45-67" required>
+
+
+    <button class="glow-on-hover" type="submit" id="profile-button">Сохранить</button>
+</form>
+<script src="addprofile/profileAction.js"></script>
+</body>
+</html>

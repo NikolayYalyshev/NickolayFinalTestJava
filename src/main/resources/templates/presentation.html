@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Профиль отсутствует</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="presentation/presentationStyle.css">
+</head>
+<body>
+<div class="header">
+    <h1 align="center">ВсеДоки.ру</h1>
+</div>
+<div id="navbar">
+    <a class="bu" href="/showprofile">Профиль</a>
+    <a href="/showpassport">Паспорт</a>
+    <a href="/authorization" class="right">Выход</a>
+    <a href="/presentation" th:text="${name}" class="right">User</a>
+</div>
+
+<h1 align="center">Документы и данные</h1>
+
+<div th:each="element : ${people}">
+
+<div class="card-block bg-c-lite-green">
+        <h1 align="center">Профиль</h1>
+    <div class="card" th:if="${element.profile.surname}">
+        <span class="items surname">Фамилия:</span>
+        <span class="fio surnameP" th:text="${element.profile.surname}">Данные отсутствуют</span>
+    </div>
+
+
+    <div class="card" th:if="${element.username}">
+        <span class="items name">Имя:</span>
+        <span class="fio nameP" th:text="${element.username}">Данные отсутствуют</span>
+    </div>
+
+
+    <div class="card" th:if="${element.profile.lastname}">
+        <span class="items lastname">Отчество:</span>
+        <span class="fio lastnameP" th:text="${element.profile.lastname}">Данные отсутствуют</span>
+    </div>
+
+
+    <div class="card" th:if="${element.profile.birthday}">
+        <span class="items birthday">Дата рождения:</span>
+        <span class="fio lastnameP" th:text="${element.profile.birthday}">Данные отсутствуют</span>
+    </div>
+
+    <div class="card" th:if="${element.profile.phoneNumber}">
+        <span class="items telefon">Телефон:</span>
+        <span class="fio lastnameP" th:text="${element.profile.phoneNumber}">Данные отсутствуют</span>
+    </div>
+
+
+    <div class="card" th:if="${element.email}">
+        <span class="items email">Почта:</span>
+        <span class="fio lastnameP" th:text="${element.email}">Данные отсутствуют</span>
+    </div>
+
+
+</div>
+<div class="card-block bg-c-lite-red">
+    <h1 align="center">Паспорт</h1>
+    <div class="card" th:if="${element.passport.series}">
+        <span class="items series">Серия:</span>
+        <span class="fio surnameP" th:text="${element.passport.series}">Данные отсутствуют</span>
+    </div>
+
+    <div class="card" th:if="${element.passport.number}">
+        <span class="items number">Номер:</span>
+        <span class="fio nameP" th:text="${element.passport.number}">Данные отсутствуют</span>
+    </div>
+
+    <div class="card" th:if="${element.passport.organization}">
+        <span class="items organization">Кем выдан:</span>
+        <span class="fio lastnameP" th:text="${element.passport.organization}">Данные отсутствуют</span>
+    </div>
+
+    <div class="card" th:if="${element.passport.dateIssue}">
+        <span class="items dateIssue">Дата выдачи:</span>
+        <span class="fio lastnameP" th:text="${element.passport.dateIssue}">Данные отсутствуют</span>
+    </div>
+
+    <div class="card" th:if="${element.passport.departmentCode}">
+        <span class="items departmentCode">Код подразделения:</span>
+        <span class="fio lastnameP" th:text="${element.passport.departmentCode}">Данные отсутствуют</span>
+    </div>
+
+
+    </div>
+</div>
+</body>
+</html>
